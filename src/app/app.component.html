@@ -1,5 +1,5 @@
-<section>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+<section >
+  <nav  class="navbar navbar-expand navbar-dark bg-dark ">
     <a href="#" class="navbar-brand">Tutorial CRUD</a>
     <div class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -9,9 +9,10 @@
         <a routerLink="add" class="nav-link">Add Tutorial</a>
       </li>
     </div>
+    <button class="btn btn-dark shadow" (click)="chageTheme()">{{"light" ? "Dark mode": "Light Mode"}}</button>
   </nav>
 
-  <div class="container mt-3">
+  <div class="container mt-3" >
     <router-outlet></router-outlet>
   </div>
 </section>
