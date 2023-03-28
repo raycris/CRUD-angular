@@ -9,14 +9,15 @@ const API = 'http://localhost:8080/api/tutorials';
   providedIn: 'root',
 })
 export class TutorialService {
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<TutorialModel[]> {
     return this.http.get<TutorialModel[]>(API);
   }
 
   get(id: any): Observable<TutorialModel> {
-    return this.http.get<TutorialModel>(`${API}/${id}`);
+    return this.http.get(`${API}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -35,7 +36,7 @@ export class TutorialService {
     return this.http.delete(API);
   }
 
-  findByTitle(title: string): Observable<TutorialModel[]> {
+  findByTitle(title: any): Observable<TutorialModel[]> {
     return this.http.get<TutorialModel[]>(`${API}?title=${title}`);
   }
 }
